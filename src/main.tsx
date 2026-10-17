@@ -5,16 +5,19 @@ import App from "./App.tsx";
 import TaskPage from "./pages/TaskPage.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/task",
-    element: <TaskPage />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+    },
+    {
+      path: "/task",
+      element: <TaskPage />,
+    },
+  ],
+  { basename: import.meta.env.BASE_URL },
+);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
